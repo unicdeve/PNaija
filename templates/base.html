@@ -1,0 +1,136 @@
+{% load static %}
+
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PNAIJA APPLICATION</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500|Gaegu:700" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href=" {% static 'css/animate.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/aos.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/ionicons.min.css'%} ">
+
+
+  <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+  {% block css %}
+    
+  {% endblock %}
+</head>
+
+<body>
+  {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <img src="{% static 'images/logo.jpg' %}" style="padding-right: 10px">
+        <a class="navbar-brand" href="{% url 'index' %}">PNaija</a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#ftco-nav"
+          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{% url 'report' %}" class="nav-link">Report</a></li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'user_logout' %}" class="nav-link">Logout</a></li>
+            <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link">profile</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'user_login' %}" class="nav-link">Login</a></li>
+            {% endif %}
+
+            {% if not user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Signup</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  {% endblock %}
+  <!-- END nav -->
+
+  {%block content%}
+  {%endblock%}
+
+  <footer class="footer"  style="margin-bottom: -360px">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <h3 class="heading-section">About Us</h3>
+          
+          <p class="">We automate  how you use power, by tracking your energy consumption for you. </p><br>
+          <p>Give you reports on Power outage and get you closer to your Power Provider Service</p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="block-23">
+            <h3 class="heading-section">Contact Info</h3>
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text">Obafemi Awolowo University, Ile-Ife,Nigeria</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2348133138727</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@PNaija.com</span></a></li>
+                <li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am - 5:00pm</span></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" /></svg></div>
+
+
+
+  <script src="{% static 'js/jquery.min.js'%} "></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js'%} "></script>
+  <script src="{% static 'js/popper.min.js'%} "></script>
+  <script src="{% static 'js/bootstrap.min.js'%} "></script>
+  <script src="{% static 'js/jquery.easing.1.3.js'%} "></script>
+  <script src="{% static 'js/jquery.stellar.min.js'%} "></script>
+  <script src="{% static 'js/owl.carousel.min.js'%} "></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js'%} "></script>
+  <script src="{% static 'js/bootstrap-datepicker.js'%} "></script>
+
+  <script src="{% static 'js/aos.js'%}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js '%} "></script>
+  <script src="{% static 'js/google-map.js'%} "></script>
+  <script src="{% static 'js/main.js'%} "></script>
+  <script
+    src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'%}">
+  </script>
+
+  <script>
+      $(document).ready(function(){
+        {% block domready %}
+        {% endblock %}
+      });
+    </script>
+
+</body>
+
+</html>

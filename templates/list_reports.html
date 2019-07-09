@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+<div class="block-31" style="position: relative; background-color: #79ccab">
+  <div class="site-section">
+    <div class="container" style="margin-top: 70px">
+        <ul class="list-group mb-5">
+          {% for report in reports %}
+          <li class="list-group-item"> <a href="" class="ml-5">{{ report.get_title_display }}</a>: {{ report.content }}</li>
+          {% endfor %}
+        </ul>
+    </div>
+  </div>
+</div>
+{%endblock%}

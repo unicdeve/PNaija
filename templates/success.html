@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+
+<style>
+  .navbar.navbar-brand, .navbar.nav-link {
+    color: #000;
+  }
+</style>
+{% endblock %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <img src="{% static 'images/logo.jpg' %}" style="padding-right: 10px">
+    <a class="navbar-brand" href="{% url 'index' %}">PNaija</a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#ftco-nav"
+      aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+
+        <li class="nav-item"><a href="" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="{% url 'report' %}" class="nav-link">Report</a></li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'user_logout' %}" class="nav-link">Logout</a></li>
+        <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link">profile</a></li>
+        {% else %}
+        <li class="nav-item"><a href="{% url 'user_login' %}" class="nav-link">Login</a></li>
+        {% endif %}
+
+        {% if not user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link">Signup</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="block-31" style="position: relative; background-color: #79ccab; height: 400px">
+  <div class="site-section">
+
+    <div class="col-md-6" id="notifications-list" class="mt-5">
+      {{ dailyrate }}
+      {{ message }}
+      {{ alarm_message }}
+    </div>
+
+  </div>
+</div>
+{%endblock %}
+
+{% block domready %}
+      $("#dailyrate").click( function(e){
+        e.preventDefault();
+        console.log("Heollllllllllllllllllllllllllll!");
+        alert("Hello!");
+  
+      });
+
+{% endblock %}

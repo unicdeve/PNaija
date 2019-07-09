@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block title%}
+{{ user }}
+
+{%endblock%}
+
+
+{% block content %}
+<div class="block-31" style="position: relative;">
+    <div class="owl-carousel loop-block-31 ">
+      <div class="block-30 block-30-sm item" style="background-image: url({% static 'images/bg_1222.jpg' %});" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-7 text-center">
+              <h2 class="heading">About PNAIJA</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="site-section mb-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12 mb-5">
+         
+        <div class="col-md-12">
+            <img src="{% static 'images/images.jpg' %}" style="width: 400px;border-radius: 10%; float: right;" alt="Image placeholder" class="img-fluid">
+            <p><h3 style="font-weight: bold">What we do</h3> </p>
+            <p><h5>We automate how you use Power, by tracking your Energy Consumption for you.</h5></p>
+            <p><h5>Give you reports on Power Outage and get you closer to your Power Provider Service.</h5></p>
+            <p><h5>We Notify you When a Power Outage is to happen or has occurred.</h5></p>
+          </div>
+          
+      </div>
+      <div class="col-md-12">
+            <p><h3 style="font-weight: bold">Vision Statment</h3> </p>
+            <p><h5>Nigeria total production of all electric energy is 29 billion kWh and Nigeria consumeconsume 24.72 billion kwh per year, per capita this is an average of 130kwh. 40% OF Electricity produced by the country is wasted as reported by
+            National Electricity Regulatory Commission (NERC) in 2018.
+      </h5></p>
+
+      <p><h5 style="font-weight: bold">With our Platform, we want to save 39.9% of energy been wasted in the country!.</h5></p>
+            
+          </div>
+          
+      </div>
+      
+          
+
+    </div>
+  </div>
+
+{% endblock %}

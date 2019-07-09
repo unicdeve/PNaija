@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%block title%}
+{{ user }}
+
+{%endblock%}
+
+
+{% block content %}
+<div class="block-31" style="position: relative;">
+  <div class="owl-carousel loop-block-31 ">
+    <div class="block-30 item" style="background-image: url('{% static 'images/bg_1.jpg' %}');"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <h2 class="heading">Lets Manage and Automate your Power Supply.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="text-center">
+          <h2 class="heading" style="font-weight: bold; font-size: 45px;">Report the Fault in your Area</h2>
+          <p>
+            <h3>Reach out to appropriate authority, so we fix your light issue quickly..</h3>
+          </p>
+          <p><a href="{% url 'report' %}" class="btn btn-primary btn-hover-green py-3 px-5 mx-2">Let's hear from you</a><a href="{% url 'list_reports' %}" class="btn btn-primary btn-hover-green py-3 px-5 mx-2">View all reported cases.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- .site-section -->
+
+
+
+<div class="featured-donate overlay-color" style="background-image: url({% static 'images/bg_2.jpg' %})">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 order-lg-2 mb-3 mb-lg-0">
+        <img src="{% static 'images/bg_2.jpg' %}" alt="Image placeholder" class="img-fluid">
+      </div>
+      <div class="col-lg-4 pr-lg-5">
+
+        <h2 class="heading" style="font-weight: bold;">Track your Energy Usage</h2>
+        <p class="mb-3">Register with Us to Track and Save Energy Consumption in your Homes.</p>
+
+        <div class="progress custom-progress">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="25"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <span class="fund-raised d-block mb-5">Do you know that you can save up to 30% of your current spending on
+          electricty </span>
+        <p><a href="{% url 'profile' %}" class="btn btn-primary btn-hover-white py-3 px-5">SAVE NOW</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h2 class="heading" style="font-weight: bold; font-size: 35px;">Be the first to know about power Outage in
+            your Area</h2>
+          <p>
+            <h3>Reach out to appropriate authority, so we fix your light issue quickly..</h3>
+          </p>
+          <p><a href="#" class="btn btn-primary btn-hover-white py-3 px-5">Subscribe</a></p>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-section -->
+
+
+  <div class="site-section " style=" background-color: #a5a5a5;">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="text-center">
+            <h2 class="heading" style="font-weight: bold; font-size: 35px;">Download our Android App</h2>
+
+            <a href="#" target="_blank"><img class="" src="{% static 'images/play.png' %}" alt="Download Playstore"></a>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .site-section -->
+  </div>
+</div>
+{% endblock %}
